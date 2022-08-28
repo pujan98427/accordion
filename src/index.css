@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+:root {
+  --primary-color: #ff5000;
+  --primary-color-rgb: 240, 85, 55;
+  --font-color: #777777;
+  --font-color-rgb: 119, 119, 119;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.App {
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.accordion {
+  padding: clamp(50px, 80px, 100px) clamp(20px, 40px, 60px)
+}
+
+.accordion__wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  padding-top: 30px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.accordion .acc-title {
+  background-color: var(--primary-color);
+  color: #fff;
+  width: calc(100% + 40px);
+  text-align: center;
+  margin: 0 0 0 -20px;
+  padding: 10px;
+  position: relative;
+  font-size: clamp(28px, 35px, 40px);
+}
+
+.accordion .acc-title::before,
+.accordion .acc-title::after {
+  content: "";
+  position: absolute;
+  bottom: -19px;
+  display: block;
+  border: 10px solid #f76d2e;
+}
+
+.accordion .acc-title::before {
+  left: 0px;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.accordion .acc-title::after {
+  right: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+.accordion .accordion-container {
+  padding: 40px 20px;
+}
+
+.accordion .accordion-container .accodion-item {
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05)
+}
+
+.accordion .accordion-container .accodion-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.accordion .accordion-container .accordion-content,
+.accordion .accordion-container .accodion-title {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.accordion .accordion-container .accordion-content {
+  border-radius: 0 0 10px 10px;
+  transition: all 0.3s ease-in-out;
+  max-height: 0;
+}
+
+.accordion .accordion-container .accodion-item.active .accordion-content {
+  max-height: 100%;
+}
+
+.accordion .accordion-container .accodion-title {
+  background-color: rgba(var(--primary-color-rgb), 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px 10px 0 0;
+}
+
+.accordion .accordion-container .accodion-title h2 {
+  font-size: 18px;
+}
+
+.accordion .accordion-container .accodion-title .toggle-button {
+  margin-left: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  padding: 2px 7.66px;
+  font-weight: 400;
+}
+
+.accordion .accordion-container .accodion-title .toggle-button:hover {
+  background-color: #000;
+}
+
+.accordion .accordion-container .accordion-content {
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+}
